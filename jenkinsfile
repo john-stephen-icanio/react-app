@@ -1,0 +1,20 @@
+pipeline {
+    agent {
+        dev {
+            echo "Test application"
+        }
+    }
+    stages {
+        stage('Build') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh '
+                pm2 start --name jenkins_test "npm start" '
+            }
+        }
+    }
+}
