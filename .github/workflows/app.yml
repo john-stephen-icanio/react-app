@@ -16,7 +16,11 @@ jobs:
         run: git pull && git checkout main
 
       - name: Variable to Files
-        run: |
-            eval "${{ vars.NPM_INSTALL }}"
+        run: eval "${{ vars.NPM_INSTALL }}"
             eval "${{ vars.PM2_DELETE }}"
             eval "${{ vars.PM2_START }}"
+
+      - name: Env files
+        run: |
+            echo {{ vars.ENV }} > .env
+            
