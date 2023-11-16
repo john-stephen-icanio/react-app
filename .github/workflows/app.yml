@@ -18,7 +18,6 @@ jobs:
       - name: Variable to Files
         run: eval "${{ vars.NPM_INSTALL }}"
 
-      - name: Env files
         env:
           REACT_APP_API_URL: "${{ vars.API_URL }}"
           REACT_APP_TEST_URL: "${{ vars.TEST_URL }}"
