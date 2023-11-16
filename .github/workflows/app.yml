@@ -8,11 +8,15 @@ jobs:
   Sample-test:
     runs-on: self-hosted
     steps:
+
+      - name: Checkout
+        uses: actions/checkout@v3
+        
       - name: Git Pull
         run: git pull && git checkout main
 
       - name: Variable to Files
         run: |
-            eval "${{ vars.PIP }}"
+            eval "${{ vars.NPM_INSTALL }}"
             eval "${{ vars.PM2_DELETE }}"
             eval "${{ vars.PM2_START }}"
