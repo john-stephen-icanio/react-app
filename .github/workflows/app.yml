@@ -23,7 +23,7 @@ jobs:
           REACT_APP_TEST_URL: "${{ vars.TEST_URL }}"
           REACT_APP_BACK_URL: "${{ vars.BACK_URL }}"
           REACT_APP_FRONT_URL: "${{ vars.FRONT_URL }}"
-          REACT_APP_SIDE_URL: "${{ vars.Side hello world }}"
+          REACT_APP_SIDE_URL: "${{ vars.SIDE_URL }}"
             
       - name: Run the app
         run: |
