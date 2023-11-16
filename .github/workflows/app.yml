@@ -1,1 +1,18 @@
-hi
+name: React-deployment demo
+on:
+  push:
+    branches: 
+      - main
+      
+jobs:
+  Sample-test:
+    runs-on: self-hosted
+    steps:
+      - name: Git Pull
+        run: git pull && git checkout main
+
+      - name: Variable to Files
+        run: |
+            eval "${{ vars.PIP }}"
+            eval "${{ vars.PM2_DELETE }}"
+            eval "${{ vars.PM2_START }}"
